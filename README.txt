@@ -1,0 +1,1 @@
+Temele de la curs IT Factory.

@@ -1,0 +1,488 @@
+"""
+1. 
+Clasa Cerc
+
+Atribute: raza, culoare
+
+Constructor pt ambele atribute
+
+Metode:
+descrie_cerc() - va PRINTA culoarea si raza
+aria() - va RETURNA aria 
+diametru() 
+circumferinta()
+"""
+
+# Rezolvare:
+from math import pi
+class Circle:
+	# A class to represent a circle.
+	# Constructor.
+	def __init__(self, radius, color):
+		# Initialize the attributes.
+		self.radius = radius
+		self.color = color
+
+	def describe(self):
+		# A method that prints the radius and color of a circle.
+		print(f"The circle's radius is {self.radius} and its color is {self.color}.")
+
+	def area(self):
+		# A method that returns a circle's area.
+		return "{:.2f}".format(pi * self.radius * self.radius)
+
+	def diameter(self):
+		# A method that returns the diameter of a circle.
+		return self.radius * 2
+
+	def circumference(self):
+		# A method that returns a circle's circumference.
+		return "{:.2f}".format(2 * pi * self.radius)	
+
+circle1 = Circle(50, "Green")
+circle2 = Circle(96, "Yellow")
+circle1.describe()
+print(f"1st circle has an area of: {circle1.area()} square meters.")
+print(f"1st circle has a diameter of: {circle1.diameter()}.")			
+print(f"1st circle has a circumference of: {circle1.circumference()} meters.")
+print("_____________________________________________________________________________")	
+circle2.describe()
+print(f"2nd circle has an area of: {circle2.area()} square meters.")
+print(f"2nd circle has a diameter of: {circle2.diameter()}.")			
+print(f"2nd circle has a circumference of: {circle2.circumference()} meters.")	
+print("_____________________________________________________________________________")	
+
+
+"""
+2. 
+Clasa Dreptunghi
+
+Atribute: lungime, latime, culoare
+
+Constructor pt toate atributele
+
+Metode:
+descrie() va PRINTA lungime, latime, culoare
+aria()
+perimetrul()
+schimba_culoarea(noua_culoare) - aceasta metoda nu returneaza nimic. 
+Ea va lua ca si param o noua culoare si va suprascrie atributul self.culoare. 
+Puteti verifica schimbarea culorii prin apelarea metodei descrie().
+"""
+
+# Rezolvare:
+class Rectangle:
+	# A class to represent a rectangle.
+	# Constructor.
+	def __init__(self, length, width, color):
+		# Initialize the attributes.
+		self.length = length
+		self.width = width
+		self.color = color
+
+	def describe(self):
+		# A method that prints the length, width and color of a rectangle.
+		print(f"This rectangle has a length of {self.length}, a width of {self.width} and its color is {self.color}.")
+
+	def area(self):
+		# A method that returns the area of the rectangle.
+		return self.length * self.width
+
+	def perimeter(self):
+		# A method that returns the perimeter of a rectangle.
+		return (self.length * 2) + (self.width * 2)			
+
+	def new_color(self, new_color):
+		self.color = new_color
+
+rectangle1 = Rectangle(50, 20, "Blue")
+rectangle2 = Rectangle(500, 60, "Green")	
+rectangle1.describe()		
+print(f"The area of 1st rectangle is {rectangle1.area()} square meters.")
+print(f"The perimeter of 1st rectangle is {rectangle1.perimeter()} meters.")
+rectangle1.new_color("Red")
+rectangle1.describe()
+print("_________________________________________________________________________")
+rectangle2.describe()		
+print(f"The area of 2nd rectangle is {rectangle2.area()} square meters.")
+print(f"The perimeter of 2nd rectangle is {rectangle2.perimeter()} meters.")
+rectangle2.new_color("Grey")
+rectangle2.describe()
+print("_________________________________________________________________________")
+
+
+"""
+3.
+Clasa Angajat
+
+Atribute: nume, prenume, salariu
+
+Constructor() pt toate atributele // constructor reprezinta __init__
+
+Metode:
+descrie() print nume, prenume, salariu
+nume_complet()
+salariu_lunar()
+salariu_anual()
+marire_salariu(procent)
+"""
+
+# Rezolvare:
+class Employee:
+	# A class to represent an employee.
+	# Constructor.
+	def __init__(self, first, last, salary):
+		# Initialize the attributes.
+		self.first = first
+		self.last = last
+		self.salary = salary
+
+	def describe(self):
+		# A method to display the details of the employee.
+		print(f"First name: {self.first}.")
+		print(f"Last name: {self.last}.")
+		print(f"Salary: {self.salary}.")
+
+	def full_first(self):
+		# A method to display the full first of the employee.
+		print(f"Employee's full first: {self.first + ' ' + self.last}.")
+
+	def monthly_income(self):
+		# A method to display the monthly income.
+		print(f"{self.first + ' ' + self.last} earns {self.salary} every month.")
+
+	def annual_income(self):
+		# A method to display the annual income.
+		print(f"{self.first + ' ' + self.last} earns {self.salary * 12} every year.")
+
+	def raise_salary(self, percentage):
+		# A method that gives a raise.
+		self.percentage = percentage
+		self.salary = self.salary + (self.percentage / 100) * self.salary
+		print(f"{self.first + ' ' + self.last} has gained a {percentage}% raise. He earns now {self.salary:.2f} every month.")
+
+employee1 = Employee("Adrian", "Cotuna", 3500)
+employee2 = Employee("Lionel", "Messi", 3416666.67)
+employee1.describe()
+employee1.monthly_income()
+employee1.annual_income()
+employee1.raise_salary(50)	
+print("____________________________")
+employee2.describe()
+employee2.monthly_income()
+employee2.annual_income()
+employee2.raise_salary(39.4)	
+print("____________________________")
+
+
+"""
+4.
+Clasa Factura
+
+Atribute: seria (va fi constanta, nu trebuie constructor, toate facturile vor avea aceeasi serie), numar, nume_produs, cantitate, pret_buc
+
+Constructor: toate atributele, fara serie
+
+Metode:
+schimba_cantitatea(cantitate)
+schimba_pretul(pret)
+schimba_nume_produs(nume)
+genereaza_factura() - va printa tabelar daca reusiti
+
+Factura seria x numar y
+Data: generati automat data de azi
+Produs | cantitate | pret bucata | Total “
+Telefon |      7       |       700       | 49000     
+
+Indiciu pt data: https://www.geeksforgeeks.org/get-current-date-using-python/
+"""
+
+# Rezolvare:
+from datetime import date
+class Invoice:
+	# A class to represent an invoice.
+	invoice_series = "INV18032022"
+	#Constructor
+	def __init__(self, number, product, quantity, unit_price):
+		# Initialize the attributes.
+		self.number = number
+		self.product = product
+		self.quantity = quantity
+		self.unit_price = unit_price
+
+	def change_quantity(self, quantity):
+		# A method that changes quantity.
+		self.quantity = quantity
+
+	def change_price(self, price):
+		# A method that changes the price.
+		self.unit_price = price		
+
+	def change_product(self, product):
+		# A method that changes the product.
+		self.product = product
+
+	def generate_invoice(self):
+		# A method to generate the invoice.
+		# Store the invoice headers in a list.
+		invoice_headers = ["| PRODUCT ", " | QUANTITY ", " | UNIT PRICE ", " | TOTAL"]
+		# Store the invoice values in a list.	
+		invoice_values = ["| " + str(self.product), " | " + str(self.quantity), " | " + str(self.unit_price), " | " + str((self.quantity * self.unit_price))]
+		# Iterate over headers.
+		for i in range(len(invoice_headers)):
+			# Iterate over values.
+			for j in range(i, i + 1):
+				# If the length of header is smaller than value's, make them the same size.
+				if len(invoice_headers[i]) < len(invoice_values[j]):
+					invoice_headers[i] = invoice_headers[i] + (len(invoice_values[j]) - len(invoice_headers[i])) * " "
+					break
+				# If the length	of the value is smaller than header's, make them the same size.
+				elif len(invoice_values[j]) < len(invoice_headers[i]):
+					invoice_values[j] = invoice_values[j] + (len(invoice_headers[i]) - len(invoice_values[j])) * " "	
+					break			
+		# Print the invoice neatly formatted.			
+		invoice_headers.append(" |")
+		invoice_values.append(" |")
+		print(f"Invoice series {self.invoice_series}, NR. {self.number}" + 
+			f"\nDate: {date.today()}")			
+		print(* invoice_headers)
+		print(* invoice_values)
+
+			
+invoice1 = Invoice(23, "Mouse", 2, 50)	
+invoice2 = Invoice(196, "Laptop", 1, 2500)	
+invoice1.generate_invoice()
+print("__________________________________________________________________________________________________")
+# Apply changes to the invoice1.
+invoice1.change_quantity(3)
+invoice1.change_price(40)
+invoice1.change_product("Mechanical Keyboard")
+invoice1.generate_invoice()
+print("__________________________________________________________________________________________________")
+invoice2 = Invoice(196, "Laptop", 1, 2500)	
+invoice2.generate_invoice()
+print("__________________________________________________________________________________________________")
+# Apply changes to the invoice2.
+invoice2.change_quantity(3)
+invoice2.change_price(200000000333333333300)
+invoice2.change_product("Asus gaming headphones")
+invoice2.generate_invoice()
+print("__________________________________________________________________________________________________")
+
+"""
+5. 
+Clasa Cont
+
+Atribute: iban, titular_cont, sold
+
+Constructor pentru toate
+
+Metode:
+afisare_sold() - Titularul x are in contul y suma de n lei
+debitare_cont(suma)
+creditare_cont(suma)
+"""
+
+# Rezolvare:
+class Account:
+	# A class to represent a user account.
+	# Constructor.
+	def __init__(self, iban, name, balance):
+		# Initialize the attributes.
+		self.iban = iban
+		self.name = name
+		self.balance = balance
+
+	def amount(self):
+		# A method to show the amount.
+		print(f"{self.name} has {self.balance}$ in his account with iban number: {self.iban}.")
+
+	def debit(self, amount):
+		# A method to "lose" some money. :)	
+		if amount <= self.balance:
+			print(f"{amount}$ are beeing withdrawn from the account.")
+			print(f"The new account balance is {self.balance - amount}$.")
+		else:
+			print("Insufficient funds.")	
+			
+	def credit(self, amount):
+		# A method that makes everyone happy(er). :)
+		print(f"To the account have been added {amount}$.")
+		print(f"The new account balance is {self.balance - amount}$.")
+
+account1 = Account("RO49AAAA1B31007593840000", "Gandalf The Grey", 999999999)
+account2 = Account("RO49AABBCC50000551111111", "Geralt of Rivia", 9875455)
+account1.amount()
+account1.debit(5000000)
+account1.credit(999)	
+print("____________________________________________________________________")
+account2.amount()
+account2.debit(5616)
+account2.credit(4554)	
+print("____________________________________________________________________")
+
+
+
+"""
+6.
+Clasa Masina
+
+Atribute: marca, model, viteza maxima, viteza_actuala, culoare, culori_disponibile (set), inmatriculata (bool)
+Culoare = gri - toate masinile cand ies din fabrica sunt gri
+Viteza_actuala = 0 - toate masinile stau pe loc cand ies din fabrica
+Culori disponibile = alegeti voi 5-7 culori
+Marca = alegeti voi - fabrica produce o singura marca dar mai multe modele
+Inmatriculata = False
+
+Constructor: model, viteza_maxima
+
+Metode:
+descrie() (se vor printa toate atributele, inafara de culori_disponibile)
+inmatriculare() - va schimba atributul inmatriculata in True
+vopseste(culoare) - se va vopsi masina in noua culoare DOAR daca noua culoare e in optiunea de culori disponibile, altfel afisati o eroare
+accelereaza(viteza) - se va accelera la o anumiota viteza, daca viteza e negativa-eroare, daca viteza e mai mare decat viteza_max - masina va accelera pana la viteza maxima
+franeaza() - masina se va opri si va avea viteza 0
+"""
+
+class Car:
+	# A class to represent a car.
+	make = "Volvo"
+	actual_speed = 0
+	color = "Grey"
+	available_colors = {"Grey", "Red", "Blue", "Green", "Orange", "Yellow", "Brown"}
+	registered = False
+
+	# Constructor
+	def __init__(self, model, max_speed):
+		# Initialize the attributes.
+		self.model = model
+		self.max_speed = max_speed
+
+	def describe(self):
+		# A method that describes a car.
+		print(f"The car is a {self.color} {self.make} {self.model}." + 
+			f"\nIt's actual speed is {self.actual_speed}Km/h, but it can get up to {self.max_speed}Km/h." + 
+			f"\n......oh, and it's registration status for now is: {self.registered}.")	
+
+	def register(self):
+		# A method to register a car.
+		self.registered = True
+
+	def paint(self, color):
+		# A method to paint a car.
+		if color in self.available_colors:
+			self.color = color
+			print(f"Choosing a color for the car..." + 
+				f"The car has been painted {self.color}.")
+		else:
+			print(f"Choosing a color for the car..." +
+				"Color not available.")
+
+	def accelerate(self, speed):
+		# a method to accelerate a car.
+		if speed < 0:
+			print("You can't go slower than beeing still.")
+		elif speed > self.max_speed:
+			self.actual_speed = self.max_speed
+			print(f"Accelerating to {self.actual_speed}Km/h.")
+		else:
+			self.actual_speed = speed
+			print(f"Accelerating to {self.actual_speed}Km/h.")
+
+	def stop(self):
+		# A method to stop a car			
+		self.actual_speed = 0
+		print(f"Hitting the breaks. Car's current speed is {self.actual_speed}Km/h.")
+
+car1 = Car("S60", 260)
+car2 = Car("S90", 300)
+car1.describe()
+car1.register()
+car1.paint("Magenta")
+car1.paint("Orange")
+car1.accelerate(130)
+car1.accelerate(300)
+car1.stop()
+print("______________________________________________________________________")
+car2.describe()
+car2.register()
+car2.paint("Magenta")
+car2.paint("Brown")
+car2.accelerate(130)
+car2.accelerate(300)
+car2.stop()
+print("______________________________________________________________________")
+
+
+"""
+7. Clasa TodoList
+ 
+Atribute: todo (dict, cheia e numele taskului, valoarea e descrierea)
+La inceput nu avem taskuri, dict e gol si nu avem nevoie de constructor
+
+Metode:
+--> adauga_task(nume, descriere) - se va adauga in dict
+--> finalizeaza_task(nume) - se va sterge din dict
+--> afiseaza_todo_list() - doar cheile
+--> afiseaza_detalii_suplimentare(nume_task) - in functie de numele taskului printam detalii suplimentare, daca taskul nu e in todo list, intrebam utilizatorul daca vrea sa il adauge.
+Daca acesta raspunde nu - la revedere
+daca raspunde da - il cerem detalii task si salvam nume+detalii in dict
+
+"""
+
+# Rezolvare:
+class ToDoList:
+	# A class to represent a todo list.
+	# Define a dict.
+	todo = {}
+
+	def add_task(self, name, description):
+		# A method to add a task into our dict.
+		self.todo[name] = description
+
+	def finish_task(self, name):
+		# A method to finish a task.
+		print(f"Finished task '{self.todo[name]}'.")
+		self.todo.pop(name)
+
+	def display_keys(self):
+		# A method to display the keys in our dict.
+		print(list(self.todo.keys()))
+
+	def details(self, name):
+		# A method to show the description of a task.
+		if name in self.todo.keys():
+			print(f"Task {name} has the following details: {self.todo[name]}.")
+		else: 
+			# If task not in dict.
+			answer = input(f"{name} is not in the task list. Would u like to add it?" + "\nType 'yes' or 'no' " )
+			if answer.lower() == "yes":
+				# Add task to dict.
+				self.todo[name] = input("Input some details: ")
+				print(f"Task {name} has the following details: {self.todo[name]}.")
+			else:
+				print("Nothing new added to the list. Goodbye!")	
+	
+our_list1 = ToDoList()
+our_list2 = ToDoList()
+our_list1.add_task(1, "Buy bread.")
+our_list1.add_task(2, "Play tennis.")
+our_list1.add_task(3, "Make a pie.")
+our_list1.add_task(4, "Go to the store.")
+print(our_list1.todo)
+our_list1.finish_task(2)
+print(our_list1.todo)
+our_list1.details(3)
+print(our_list1.todo)
+print("____________________________________________________________________________________________")
+our_list2.add_task(1, "Order pizza at 17:00.")
+our_list2.add_task(2, "Dentist appointment at 18:30.")
+our_list2.add_task(3, "Check e-mails.")
+our_list2.add_task(4, "Order cinema tickets.")
+print(our_list2.todo)
+our_list2.finish_task(2)
+print(our_list2.todo)
+our_list2.details(7)
+print(our_list2.todo)
+print("____________________________________________________________________________________________")
+

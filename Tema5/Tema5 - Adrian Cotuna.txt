@@ -1,0 +1,507 @@
+"""
+1. Functie care sa calculeze si sa returneze suma a 2 numere
+"""
+
+# Rezolvare:
+def addition(first, second):
+	# Return the sum of 2 numbers.
+	return f"The sum of {first} and {second} is: {first + second}."
+
+
+# Calling the function.
+print(addition(10, 20))
+print(addition(-5, -20))
+print(addition(-5, 10))
+
+
+"""
+2. Functie care sa returneze TRUE daca un numar este par, FALSE pt impar
+"""
+
+# Rezolvare:
+def odd_even(num):
+	# Verify if a number is odd or even.
+	if num % 2 == 0:
+		return True
+	else:
+		return False
+
+print(odd_even(11))		
+print(odd_even(10))
+
+
+"""
+3. Functie care returneaza numarul total de caractere din numele tau complet.
+(nume, prenume, nume_mijlociu) 
+"""
+
+# Rezolvare: 
+def num_of_chars_ws(name):
+	# Return the number of characters in a name including white spaces(ws).
+	return f"Number of characters in your full name including white spaces: {str(len(name))}."
+	
+
+def num_of_chars_no_ws(name):	
+	# Return the number of characters in a name excluding white spaces(no_ws).
+	name_no_ws = " ".join(name).split()
+	return f"Number of characters in your full name excluding white spaces: {str(len(name_no_ws))}."	
+
+
+print(num_of_chars_ws('Cotuna Adrian'))
+print(num_of_chars_no_ws("Cotuna Adrian"))
+
+
+"""
+4. Functie care returneaza aria dreptunghiului
+"""
+
+# Rezolvare:
+def rectangle_area(length, width):
+	# Return any rectangle's area.
+	# If the user enters a width > length, then that's the length of the rectangle.
+	# We make this check so that the return will make sense.
+	if width > length:
+		length, width = width, length
+	return f"The area of a rectangle with length of {length} meters and width of {width} meters is {length * width} square meters."
+
+print(rectangle_area(15, 10))	 
+print(rectangle_area(3, 30))
+
+
+"""
+5. Functie care returneaza aria cercului
+"""
+
+# Rezolvare:
+from math import pi
+def circle_area(radius):
+	# Return a circle's area.
+	return f"The area of a circle with a radius of {radius} meters is " + "{:.2f}".format(pi * radius * radius) + " square meters."
+
+print(circle_area(50))	
+print(circle_area(86))
+
+
+"""
+6. Functie care returneaza True daca un caracter x se gaseste intr-un string dat. False daca nu
+"""
+
+# Rezolvare:
+def find(x):
+	# Return True if a character is in a given string or False if it's not.
+	string = "The greatest glory in living lies not in never falling, but in rising every time we fall."
+	if x.lower() in string.lower():
+		return True
+	else:
+		return False
+
+print(find("a"))	
+print((find("1")))			 
+
+
+"""
+7. Functie fara return, primeste un string si printeaza pe ecran:
+Nr de caractere lower case este x
+Nr de caractere upper case este y 
+"""
+
+# Rezolvare:
+def lower_upper(string):
+	# Print how many upper or lower case characters are in a string.
+	count_lower = 0
+	count_upper = 0
+	alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+	random = []
+	for i in alphabet:
+		for j in string:
+			if j == i:										
+				count_lower += 1
+			elif j == i.upper():
+				count_upper += 1
+	print(f"Number of lowercase characters: {str(count_lower)}.")
+	print(f"Number of uppercase characters: {str(count_upper)}.")
+lower_upper("Adrian CotunA")
+lower_upper("ADRIAN cotuna 32")	
+
+
+"""
+8. Functie care primeste o LISTA de numere si returneaza o LISTA doar cu numerele pozitive
+"""
+
+# Rezolvare:
+def positive_numbers(randoms):
+	# Return a list of only positive numbers from a given list.
+	positives = []
+	for i in randoms:
+		if i > 0:
+			positives.append(i)
+	return positives		
+print(positive_numbers([0, 1, 4, 5, 7, -12, 53, 76, -98, 111, -10, 9, 99, -12, 13, 35, 66]))	
+print(positive_numbers([33, -44, 55, -66, 77, 88, -99, 11, 22]))	
+
+
+"""
+9. Functie care nu returneaza nimic. Primeste 2 numere si PRINTEAZA
+Primul numar x este mai mare decat al doilea nr y
+Al doilea nr y este mai mare decat primul nr x
+Numerele sunt egale. 
+"""
+
+# Rezolvare:
+def check_numbers(first, second):
+	# Print if 2 numbers are equal or if a number is higher than the other.
+	if first > second:
+		print(f"First number: {first} is higher than the 2nd number: {second}.")
+	elif second > first:
+		print(f"Second number: {second} is higher than the 1st number: {first}.")	
+	else:
+		print(f"The two numbers are equal.")	
+check_numbers(10, 5)
+check_numbers(1, 2)
+check_numbers(5, 5)
+	
+
+"""
+10. Functie care primeste un numar si un set de numere.
+Printeaza ‘am adaugat numarul nou in set’ + returneaza True
+Sau Printeaza ‘nu am adaugat numarul in set. Acesta exista deja’ + returneaza False
+"""
+
+# Rezolvare:
+def check_num_in_set(x, y):
+	# Verify if a number is in a given set and if it's not, add it into the set and then return True
+	# if it is in the set, don't do anything, just return False.
+	if x not in y:
+		print(f"I've added the new number to the set.")
+		return True
+	elif x in y:
+		print(f"I didn't add the new number to the set. It's already into the set.")
+		return False
+# Using the print function.		
+print(check_num_in_set(3, {10, 4, 5, 7, 88, 99, 34,2}))
+print(check_num_in_set(4, {3, 5, 7, 4, 8, 2, 2, 3, 4, 6}))		
+# Checking the result without the print function.
+check_num_in_set(3, {10, 4, 5, 7, 88, 99, 34,2})
+check_num_in_set(4, {3, 5, 7, 4, 8, 2, 2, 3, 4, 6})
+
+
+"""
+11. Functie care primeste o luna din an si returneaza cate zile are acea luna
+"""
+
+# Rezolvare:
+# Import the modules we need.
+from datetime import date
+from calendar import monthrange as mr
+
+def month_days(month, year=date.today().year): # Set a default value for year.
+	# I know we had to pass only one argument to the function, but seems more usefull this way.
+	# Get the number of days in a month by passing the name of the month (and/or(optionally) the year) to the function.
+	# 1st make a dict of months so we can use both the name of the month, and index.
+	months = {
+		"january": 1, "february": 2, "march": 3,
+		"april": 4, "may": 5, "june": 6,
+		"july": 7, "august": 8, "september": 9,
+		"october": 10, "november": 11, "december": 12,
+		}	
+	# Iterate over dict and get the keys and values.	
+	for key, value in months.items():
+		if month == str(month):
+			if month.lower() == key:
+				return f"{key.title()} in {year} has {mr(year, value)[1]} days."
+		elif month == int(month):
+			if month == value:
+				return f"{key.title()} in {year} has {mr(year, value)[1]} days."				
+			
+print(month_days("FEBRUARY", 2036))	
+print(month_days("march", 2059))	
+print(month_days(10, 2045))	
+print(month_days(11))	
+	
+	
+"""
+12. Functie calculator care sa returneze 4 valori 
+Suma, diferenta, inmultirea, impartirea a 2 numere
+
+In final vei putea face:
+a, b, c, d = calculator(10, 2)
+print("Suma: ", a)
+print("Diferenta: ", b)
+print("Inmultirea: ", c)
+print("Impartirea: ", d)
+"""
+
+# Rezolvare:
+def calc(x, y):
+	# A function which returns the sum, difference, product and quotient of two numbers.
+	
+	if y != 0:
+		d = x / y
+	else:
+		d = "Can't divide by zero"	
+	a = x + y
+	b = x - y
+	c = x * y
+	return (f"Sum of {x} and {y}: {a}." + 
+			f"\nDifference of {x} and {y}: {b}." + 
+			f"\nProduct of {x} and {y}: {c}." + 
+			f"\nQuotient of {x} and {y}: {d}.")
+print(calc(10, 5))		
+print(calc(-10, -5))	
+print(calc(-10, 5))
+print(calc(0, 10))
+print(calc(10, 0))
+
+
+"""
+13. Functie care primeste o lista de cifre (adica doar 0-9)
+Ex: [1, 3, 1, 5, 9, 7, 7, 5, 5]
+Returneaza un DICT care ne spune de cate ori apare fiecare cifra.
+=> dict {
+0: 0
+1: 2
+2: 0
+3: 1
+4: 0
+5: 3
+6: 0
+7: 2
+8: 0
+9: 1
+}
+"""
+
+# Rezolvare:
+def count_nums(nums):
+	# A function that receives a list of nums and returns a dictionary
+	# that shows how many times each number appears in the list.
+	dict_count = {}
+	for i in range(0, 10):
+		dict_count[i] = nums.count(i)
+	# To keep the resulting given format we need to print(not return) the dict_count.
+	for i, j in dict_count.items():
+		print(f"{i}: {dict_count[i]}")
+count_nums([1, 3, 1, 5, 9, 7, 7, 5, 5])
+print("_________________________________")
+count_nums([2, 2, 3, 4, 4, 4, 7, 7, 9])
+print("_________________________________")
+count_nums([9, 9, 9, 9, 9, 9, 9, 9, 9])
+		
+
+"""
+14. Functie care primeste 3 numere
+Returneaza valoarea maxima dintre ele
+"""
+
+# Rezolvare:
+def max_num(x, y, z):
+	# A function that receives 3 numbers and returns the highest number.
+	return max(x, y, z)
+print(max_num(10, 4, 6))
+print(max_num(30, 44, 53))
+print(max_num(-10, -20, -30))
+
+
+# (Altfel de) Rezolvare:
+def max_number(x, y, z):
+	# A function that receives 3 numbers and returns the highest number
+	# Store the 3 given numbers into a list
+	nums = [x, y, z]
+	# Sort the list ascending.
+	for i in range(0, len(nums)):
+		for j in range(i + 1, len(nums)):
+			if nums[i] > nums[j]:
+				nums[i], nums[j] = nums[j], nums[i]
+	# Get the highest item in the sorted list(which is the last one).			
+	highest = nums[-1]			
+	# Return the highest number in the list.
+	return highest			
+print(max_number(10, 4, 6))
+print(max_number(30, 44, 53))
+print(max_number(-10, -20, -30))
+
+
+"""
+15. Functie care sa primeasca un numar si sa retunreze suma tuturor numerelor de la 0 la acel numar
+Ex: daca dam nr 3
+Suma va fi 6 (0+1+2+3)
+"""
+
+# Rezolvare:
+def additon(num):
+	# A function that receives a number and calculates the sum of all numbers 'til that number.
+	# Set a count flag.
+	count = 0
+	# Iterate over the entire range and add the new value of i to the last one.
+	if num >= 0:
+		for i in range(num + 1):
+			count += i
+		return count
+	elif num < 0:
+		for i in range(num, 0):
+			count += i
+		return count	
+print(additon(11))	
+print(additon(45))	
+print(additon(-34))
+print(additon(-11))
+
+
+# (Altfel de) Rezolvare:
+def sum_range(number):
+	if number >= 0:
+		return sum(range(number + 1))
+	elif number < 0:
+		return sum(range(number, 0))
+print(sum_range(11))
+print(sum_range(45))
+print(sum_range(-34))
+print(sum_range(-11))
+
+
+"""
+16. Functie in care sa dai un nume romanesc si sa iti printeze pe ecran
+‘Numele este de baiat’ sau ‘Numele este de fata’
+"""
+
+# Rezolvare:
+# Lists have been copied from Wikipedia.
+def boy_or_girl(name):
+	# A function that receives a romanian name and returns if it's a boy's name or a girl's.
+	# Define the 2 lists(male and female names.)	
+	male_names = ['Abel', 'Achim', 'Adam', 'Adelin', 'Adi', 'Adonis', 'Adrian', 'Agnos', 'Albert', 'Aleodor', 'Alex', 'Alexandru', 'Alexe', 'Alin', 'Alistar', 
+				'Amedeu', 'Amza', 'Anatolie', 'Andrei', 'Andrian', 'Angel', 'Anghel', 'Antim', 'Anton', 'Antonie', 'Antoniu', 'Arcadian', 'Arian', 'Aristide', 'Arsenie', 
+				'Atanasio', 'Augustin', 'Aurel', 'Aurelian', 'Avram', 'Axinte', 'Barbu', 'Bartolomeu', 'Basarab', 'Banel', 'Bebe', 'Beniamin', 'Benone', 'Bernard', 
+				'Bogdan', 'Bradut', 'Bucur', 'Caius', 'Camil', 'Cantemir', 'Carol', 'Casian', 'Cazimir', 'Calin', 'Catalin', 'Cecil', 'Cedrin', 'Cezar', 'Ciprian', 'Claudiu', 
+				'Codin', 'Codrin', 'Codrut', 'Constantin', 'Cornel', 'Corneliu', 'Corvin', 'Cosmin', 'Costache', 'Costica', 'Costel', 'Costin', 'Crin', 'Cristea', 'Cristian', 
+				'Cristinel', 'Cristobal', 'Cristofor', 'Dacian', 'Damian', 'Dan', 'Daniel', 'Darius', 'David', 'Decebal', 'Denis', 'Dinu', 'Dionisie', 'Dominic', 'Dorel', 'Dorian', 
+				'Dorin', 'Dorinel', 'Doru', 'Dragomir', 'Dragoș', 'Ducu', 'Dumitru', 'Edgar', 'Edmond', 'Eduard', 'Eftimie', 'Emanoil', 'Emanuel', 'Emanuil', 'Emil', 'Emilian', 
+				'Eremia', 'Eric', 'Ernest', 'Eugen', 'Eusebiu', 'Eustatiu', 'Fabian', 'Faust', 'Felix', 'Filip', 'Fiodor', 'Flaviu', 'Florea', 'Florentin', 'Florian', 'Florin', 
+				'Francisc', 'Gabi', 'Gabriel', 'Gelu', 'George', 'Georgel', 'Georgian', 'Ghenadie', 'Gheorghe', 'Gheorghita', 'Gherasim', 'Ghita', 'Gica', 'Gicu', 'Giorgian', 
+				'Gratian', 'Gregorian', 'Grigoraș', 'Grigore', 'Haralamb', 'Haralambie', 'Horatiu', 'Horea', 'Horia', 'Horica', 'Iacob', 'Iacov', 'Iancu', 'Ianis', 'Ieremia', 
+				'Ilarie', 'Ilarion', 'Ilie', 'Iliuta', 'Inocentiu', 'Ioan', 'Ion', 'Ionel', 'Ionica', 'Ionita', 'Ionut', 'Iorgu', 'Iosif', 'Irinel', 'Isidor', 'Iulian', 'Iuliu', 
+				'Iurie', 'Iustin', 'Iustinian', 'Ivan', 'Jan', 'Jean', 'Jenel', 'Ladislau', 'Lascar', 'Laurentiu', 'Laurian', 'Lazar', 'Leonard', 'Leontin', 'Leordean', 'Lica', 
+				'Liviu', 'Lorin', 'Luca', 'Lucentiu', 'Lucian', 'Lucretiu', 'Ludovic', 'Manole', 'Marcel', 'Marcu', 'Marian', 'Marin', 'Marinel', 'Marius', 'Martin', 'Matei', 
+				'Maxim', 'Maximilian', 'Madalin', 'Marin', 'Mihai', 'Mihail', 'Mihaita', 'Mihnea', 'Mina', 'Mircea', 'Miron', 'Mitica', 'Mitrofan', 'Mitrut', 'Moise', 'Mugur', 
+				'Mugurel', 'Nae', 'Narcis', 'Nechifor', 'Nelu', 'Nichifor', 'Nicoara', 'Nicodim', 'Nicolae', 'Nicolaie', 'Nicu', 'Niculita', 'Nicușor', 'Nicuta', 'Norbert', 
+				'Noris', 'Norman', 'Octav', 'Octavian', 'Octaviu', 'Olimpian', 'Olimpiu', 'Oliver', 'Oliviu', 'Ovidiu', 'Pamfil', 'Panagachie', 'Panait', 'Paul', 'Pavel', 
+				'Patru', 'Petre', 'Petrica', 'Petrișor', 'Petru', 'Petrut', 'Pintiliu', 'Pleșu', 'Pompiliu', 'Radu', 'Rafael', 'Rareș', 'Raul', 'Raducu', 'Razvan', 'Relu', 
+				'Remus', 'Robert', 'Romeo', 'Romi', 'Romica', 'Romulus', 'Sabin', 'Sandu', 'Sandu', 'Sava', 'Sebastian', 'Septimiu', 'Sergiu', 'Sever', 'Severin', 'Silvian', 
+				'Silviu', 'Simi', 'Simion', 'Sinica', 'Sorin', 'Stan', 'Stancu', 'Stelian', 'Serban', 'Stefan', 'Teodor', 'Teofil', 'Teohari', 'Theodor', 'Tiberiu', 'Timotei', 
+				'Titus', 'Todor', 'Toma', 'Traian', 'Trandafir', 'Tudor', 'Valentin', 'Valer', 'Valeriu', 'Valter', 'Vasile', 'Veniamin', 'Vicentiu', 'Victor', 
+				'Vincentiu', 'Viorel', 'Visarion', 'Virgil', 'Vlad', 'Vladimir', 'Vlaicu', 'Voicu', 'Zamfir', 'Zeno', 'Zaharie']
+	female_names = ['Ada', 'Adela', 'Adelaida', 'Adelina', 'Adina', 'Adriana', 'Adnana', 'Agata', 'Aglaia', 'Agripina', 'Aida', 'Alberta', 'Albertina', 
+					'Alexandra', 'Alexandrina', 'Alexia', 'Alice', 'Alida', 'Alina', 'Alis', 'Alma', 'Amalia', 'Amanda', 'Amelia', 'Ana', 'Anabela', 'Anaida', 
+					'Anamaria', 'Anastasia', 'Anca', 'Ancuta', 'Anda', 'Andra', 'Andrada', 'Andreea', 'Anemona', 'Aneta', 'Angela', 'Angelica', 'Anghelina', 'Anica', 
+					'Anișoara', 'Antoaneta', 'Antonela', 'Antonia', 'Anuta', 'Ariadna', 'Ariana', 'Arina', 'Aristita', 'Artemisa', 'Astrid', 'Atena', 'Augusta', 
+					'Augustina', 'Aura', 'Aurelia', 'Aureliana', 'Aurica', 'Aurora', 'Axenia', 'Beatrice', 'Betina', 'Bianca', 'Blanduzia', 'Bogdana', 'Brândușa', 
+					'Camelia', 'Carina', 'Carla', 'Carmen', 'Carmina', 'Carolina', 'Casandra', 'Casiana', 'Caterina', 'Catinca', 'Catrina', 'Catrinel', 
+					'Catalina', 'Cecilia', 'Celia', 'Cerasela', 'Cezara', 'Chira', 'Cipriana', 'Clara', 'Clarisa', 'Claudia', 'Clementina', 'Cleopatra', 'Codrina', 
+					'Codruta', 'Constanta', 'Constantina', 'Consuela', 'Coralia', 'Corina', 'Cornelia', 'Cosmina', 'Crenguta', 'Crina', 'Cristina', 'Daciana', 'Dafina', 
+					'Daiana', 'Dalia', 'Dana', 'Daniela', 'Daria', 'Dariana', 'Delia', 'Demetra', 'Denisa', 'Despina', 'Diana', 'Dida', 'Didina', 'Dimitrina', 'Dina', 
+					'Dochia', 'Doina', 'Domnica', 'Dora', 'Doriana', 'Dorina', 'Dorli', 'Draga', 'Dumbravita', 'Dumitra', 'Dumitrana', 'Ecaterina', 'Eftimia', 'Elena', 
+					'Eleonora', 'Eliana', 'Elisabeta', 'Elisaveta', 'Eliza', 'Elodia', 'Elvira', 'Emanuela', 'Emilia', 'Erica', 'Estera', 'Eufrosina', 'Eugenia', 'Eusebia', 
+					'Eva', 'Evanghelina', 'Evelina', 'Fabia', 'Fabiana', 'Felicia', 'Fausta', 'Filofteia', 'Filomela', 'Fiona', 'Flavia', 'Floare', 'Floarea', 'Flora', 
+					'Florenta', 'Florentina', 'Floriana', 'Florica', 'Florina', 'Francesca', 'Frusina', 'Gabriela', 'Geanina', 'Gentiana', 'Georgeta', 'Georgia', 
+					'Georgiana', 'Geta', 'Gherghina', 'Gianina', 'Gina', 'Giorgiana', 'Gloria', 'Glorita', 'Gratiana', 'Gratiela', 'Henrieta', 'Heracleea', 'Hortensia', 
+					'Iasmina', 'Ica', 'Ilaria', 'Ileana', 'Ilinca', 'Ilona', 'Ina', 'Ioana', 'Ioanina', 'Iolanda', 'Ionela', 'Ionelia', 'Ionuta', 'Iosefina', 'Iridenta', 
+					'Irina', 'Iris', 'Irma', 'Isabela', 'Isaura', 'Iulia', 'Iuliana', 'Iustina', 'Ivana', 'Ivona', 'Izabela', 'Izaura', 'Jana', 'Janeta', 'Janina', 
+					'Jasmina', 'Jeana', 'Joita', 'Julia', 'Julieta', 'Larisa', 'Laura', 'Laurentia', 'Lavinia', 'Lacramioara', 'Leana', 'Lelia', 'Leontina', 'Leopoldina', 
+					'Letitia', 'Lenuta', 'Lia', 'Liana', 'Lidia', 'Ligia', 'Lili', 'Liliana', 'Lioara', 'Livia', 'Loredana', 'Lorelei', 'Lorena', 'Luana', 'Lucia', 
+					'Luciana', 'Lucretia', 'Ludmila', 'Ludovica', 'Luiza', 'Luminita', 'Magdalena', 'Maia', 'Malvina', 'Manuela', 'Mara', 'Marcela', 'Marcheta', 'Marga', 
+					'Margareta', 'Maria', 'Mariana', 'Maricica', 'Marieta', 'Marilena', 'Marina', 'Marinela', 'Marioara', 'Marta', 'Martina', 'Marusia', 'Matilda', 
+					'Madalina', 'Malina', 'Marioara', 'Mariuca', 'Melania', 'Melina', 'Melinda', 'Melisa', 'Mia', 'Mihaela', 'Milena', 'Minodora', 'Mioara', 'Mirabela', 
+					'Miranda', 'Mirela', 'Mirona', 'Miuta', 'Miruna', 'Mona', 'Monalisa', 'Monica', 'Nadia', 'Naomi', 'Narcisa', 'Natalia', 'Natașa', 'Nicoleta', 'Niculina', 
+					'Nidia', 'Nina', 'Noemi', 'Nora', 'Norica', 'Oana', 'Octavia', 'Octaviana', 'Ofelia', 'Olga', 'Olimpia', 'Olivia', 'Ortansa', 'Otilia', 'Ozana', 'Pamela', 
+					'Paraschiva', 'Patricia', 'Paula', 'Paulica', 'Paulina', 'Petria', 'Petrina', 'Petronela', 'Petruta', 'Pompilia', 'Profira', 'Rada', 'Rafila', 'Raluca', 
+					'Ramona', 'Rebeca', 'Reghina', 'Renata', 'Rica', 'Rita', 'Roberta', 'Robertina', 'Rodica', 'Romana', 'Romanita', 'Romina', 'Roxana', 'Roxelana', 'Roza', 
+					'Rozalia', 'Ruxanda', 'Ruxandra', 'Sabina', 'Sabrina', 'Safina', 'Safta', 'Salomea', 'Sanda', 'Sandra', 'Saveta', 'Savina', 'Sandica', 'Sânziana', 'Selina', 
+					'Semenica', 'Smeralda', 'Serafina', 'Severina', 'Sidonia', 'Silvana', 'Silvia', 'Silviana', 'Simina', 'Simona', 'Smaranda', 'Sodica', 'Sofia', 'Sofica', 
+					'Sonia', 'Sorana', 'Sorina', 'Speranta', 'Stana', 'Stanca', 'Stela', 'Steliana', 'Steluta', 'Susana', 'Suzana', 'Svetlana', 'Stefana', 'Stefania', 'Tamara', 
+					'Tania', 'Tatiana', 'Teea', 'Teodora', 'Teodosia', 'Teona', 'Teresa', 'Tereza', 'Tiberia', 'Timea', 'Tinca', 'Tincuta', 'Tudora', 'Tudorica', 'Tudorita', 
+					'Tudosia', 'Valentina', 'Valeria', 'Vanesa', 'Varvara', 'Vasilica', 'Vasilichia', 'Venera', 'Vera', 'Veronica', 'Veta', 'Vicentia', 'Victoria', 'Violeta', 
+					'Viorela', 'Viorica', 'Virginia', 'Viviana', 'Vladelina', 'Voichita', 'Zaharia', 'Zamfira', 'Zaraza', 'Zenaida', 'Zenobia', 'Zenovia', 'Zina', 'Zita', 'Zoe']	
+	# Verify if the name we're searching for is in male_names.						
+	if name in male_names:
+		print(f"'{name}' is a boy's name.")
+	# If the name we're searching for isn't in male_names, it's a girl name.	
+	else:
+		print(f"'{name}' is a girl's name.")
+
+boy_or_girl("Stefan")
+boy_or_girl("Stefania")
+boy_or_girl("Zaharie")
+boy_or_girl("Mihaela")
+
+
+"""
+17. Functie care primesete 2 liste de numere (numerele pot fi dublate)
+Returnati numerele comune 
+
+Ex:
+list1 = [1, 1, 2, 3]
+list2 = [2, 2, 3, 4]
+Raspuns: {2, 3}
+"""
+
+# Rezolvare:
+def common(a, b):
+	# A function that receives 2 lists and returns only the common elements in the lists.
+	return set(a).intersection(b)
+print(common([1, 1, 2, 3], [2, 2, 3, 4]))	
+
+
+"""
+18. Functie care sa aplice o reducere de pret
+Daca produsul costa 100 lei si aplicam reducere de 10%
+Pretul va fi 90
+Tratati cazurile in care reducerea e invalida. De ex o reducere de 110% e invalida
+"""
+
+# Rezolvare:
+# Import the needed modules to work with decimal values.
+def price_discount(price, discount):
+	# Function that receives a price and a discount and returns a price with applied discount.
+	# If the discount is higher than 100%, then the product is free of charge.
+	if discount >= 100.00:
+		return f"After applying a {discount}% discount on a price of {price}$, the product is free of charge, enjoy! :)"	
+	else:
+		new_price = price - (discount / 100 * price)
+		return f"After applying a {float(discount)}% discount on a price of {price}$, you need to pay only" + " {:.2f}".format(new_price) + "$."
+print(price_discount(100, 70))
+print(price_discount(230.45, 37.56))				
+print(price_discount(88500.50, 46.79))
+print(price_discount(7500.50, 100.02))
+
+
+"""
+19. Functie care sa afiseze data si ora curenta.
+"""
+
+# Rezolvare:
+from datetime import datetime
+def show_date():
+	# A functions that prints the current date and time.
+	print(datetime.today())
+show_date()
+
+
+"""
+20. Functie care sa afiseze cate zile mai sunt pana la ziua ta / sau pana la craciun daca nu vrei sa ne zici cand e ziua ta :)
+"""
+
+# Rezolvare:
+# Import the needed modules.
+from datetime import date
+def birthday(day, month, year):
+	# A function that shows how many days left 'till someone's birthday.
+	day = int(day)
+	month = int(month)
+	year = int(year)
+	birthday = date(year, month, day)
+	today = date.today()
+	return f"Days left 'till my birthday: {(birthday - today).days}."
+print(birthday(26, 11, 2022))	
+print(birthday(23, 8, 2022))	
+print(birthday(11, 7, 2022))	
+
