@@ -1,1 +1,1 @@
-# asdasdasdsa 
+# Tema7.
