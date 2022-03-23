@@ -1,1 +1,1 @@
-Temele de la curs IT Factory.
+Teme de la curs IT Factory.
