@@ -1,63 +1,83 @@
 {
   "utilizatori": {
-    "0c9f348adae2d16224db2d10139efd68": {
-      "nume": "yolo",
-      "email": "yolo@gmail.com",
-      "data_inregistrare": "2021-08-31T01:19:59.543850+03:00"
+    "dd5e07ff6f9740dde6a671f6afc784dc": {
+      "nume": "adrian",
+      "email": "adrian@gmail.com",
+      "data_inregistrare": "2022-04-09T21:13:16.453327+03:00"
+    },
+    "8330690c4248bf19ae89636ca6952c9b": {
+      "nume": "alin",
+      "email": "alin@yahoo.com",
+      "data_inregistrare": "2022-04-09T21:13:57.919269+03:00"
+    },
+    "e45cce85ec6e2457474c0c7b96294427": {
+      "nume": "claudiu",
+      "email": "claudiu@yahoo.com",
+      "data_inregistrare": "2022-04-09T22:10:29.198448+03:00"
+    },
+    "3186635c40d5515f9cfc23d51d408390": {
+      "nume": "gica",
+      "email": "gica@hotmail.com",
+      "data_inregistrare": "2022-04-09T22:14:37.801707+03:00"
+    },
+    "bef317b3aeeb16a1bfc745ff140af238": {
+      "nume": "dani",
+      "email": "dani@gmail.com",
+      "data_inregistrare": "2022-04-09T22:15:35.810596+03:00"
+    },
+    "b44b6127f0cd4e3d6e97c04bf9a0f493": {
+      "nume": "luci",
+      "email": "luci@yahoo.com",
+      "data_inregistrare": "2022-04-09T22:16:36.870328+03:00"
     }
   },
   "produse": {
-    "ed9da765be49636076396099ed8b9664": {
-      "nume produs": "apa",
+    "c59c01ae3d43dc354e6a78e2fecca4a9": {
+      "nume produs": "biscuiti",
+      "pret": 5.0,
+      "data inregistrare": "2022-04-09T22:07:57.909978+03:00"
+    },
+    "e57204f16c573a0464b80c5d517c514e": {
+      "nume produs": "ciocolata",
       "pret": 3.0,
-      "data inregistrare": "2022-04-03T20:12:08.631338+03:00"
+      "data inregistrare": "2022-04-09T22:08:02.677232+03:00"
     },
-    "e9cee78302f1973d070272b416d96473": {
-      "nume produs": "suc",
-      "pret": 3.45,
-      "data inregistrare": "2022-04-03T20:18:00.720434+03:00"
-    },
-    "c4478a6a8c4a3508e129c23678f3461d": {
-      "nume produs": "lapte",
-      "pret": 9.32,
-      "data inregistrare": "2022-04-03T20:18:06.566808+03:00"
-    },
-    "39ee7eb662507bc6344bdccb15840ae1": {
-      "nume produs": "miere",
-      "pret": 4.5,
-      "data inregistrare": "2022-04-03T20:18:39.927644+03:00"
+    "e6951d2b4726d585e4b02ca7a8d96e73": {
+      "nume produs": "napolitane",
+      "pret": 5.5,
+      "data inregistrare": "2022-04-09T22:08:19.812415+03:00"
     }
   },
   "comenzi": {
-    "a57fa44f95a7987b19bfba22e7ef21d4": {
-      "id_comanda": "a57fa44f95a7987b19bfba22e7ef21d4",
+    "00ae6f9b95a4672ae9ed63b63611cdbb": {
+      "id_comanda": "00ae6f9b95a4672ae9ed63b63611cdbb",
       "detalii_comanda": [
         {
-          "lapte": 5
+          "mouse": 2
         },
         {
-          "suc": 2
+          "tastatura": 3
         },
         {
-          "paine": 2
+          "tableta": 5
         }
       ],
-      "data_inregistrare": "2022-04-03T20:23:53.990250+03:00"
+      "data_inregistrare": "2022-04-09T22:06:48.159484+03:00"
     },
-    "65a261f10d5db97a7dedea4f8d484192": {
-      "id_comanda": "65a261f10d5db97a7dedea4f8d484192",
+    "196923ef92a261748344614b0a768d7a": {
+      "id_comanda": "196923ef92a261748344614b0a768d7a",
       "detalii_comanda": [
         {
-          "sushi": 2
+          "ciocolata": 3
         },
         {
-          "biscuiti": 3
+          "biscuiti": 5
         },
         {
-          "oua": 10
+          "napolitane": 10
         }
       ],
-      "data_inregistrare": "2022-04-03T20:24:14.799632+03:00"
+      "data_inregistrare": "2022-04-09T22:07:39.271815+03:00"
     }
   }
 }
