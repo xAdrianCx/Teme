@@ -1,0 +1,85 @@
+{
+  "utilizatori": {
+    "2a79d53e257a79e99d8ddaae24deceb5": {
+      "nume": "daniel",
+      "email": "dany@gmail.com",
+      "data_inregistrare": "2022-04-17T20:56:07.225427+03:00"
+    },
+    "17a730772e75f1509e3099bacf74efae": {
+      "nume": "costel",
+      "email": "costica@yahoo.com",
+      "data_inregistrare": "2022-04-17T20:56:18.667837+03:00"
+    },
+    "8a85a0fa4255da1febc50386de8670d8": {
+      "nume": "claudiu",
+      "email": "clau@yahoo.com",
+      "data_inregistrare": "2022-04-17T20:56:29.630531+03:00"
+    }
+  },
+  "produse": {
+    "083970786b3a3f4580c47d44774c7702": {
+      "nume_produs": "mere",
+      "pret": 3.7,
+      "data_inregistrare": "2022-04-17T21:26:53.343042+03:00"
+    },
+    "081276d3a606a2e40fce5bfa48539c50": {
+      "nume_produs": "banane",
+      "pret": 5.0,
+      "data_inregistrare": "2022-04-17T21:27:05.302073+03:00"
+    },
+    "ef2cae86fb99f931b8d4a3555a16c29e": {
+      "nume_produs": "paine",
+      "pret": 1.5,
+      "data_inregistrare": "2022-04-17T21:27:14.716903+03:00"
+    },
+    "700115a04beaa61baf1332c52ce96157": {
+      "nume_produs": "cascaval",
+      "pret": 4.5,
+      "data_inregistrare": "2022-04-17T21:27:23.546301+03:00"
+    },
+    "072a0b0253f5ee8fa6b8b5b02292989e": {
+      "nume_produs": "mouse",
+      "pret": 20.5,
+      "data_inregistrare": "2022-04-17T21:27:33.538589+03:00"
+    },
+    "1ea9844e92f3fcb7709585ad5478305d": {
+      "nume_produs": "pizza",
+      "pret": 6.8,
+      "data_inregistrare": "2022-04-17T21:27:54.954339+03:00"
+    },
+    "6312878e370cea7fa39f3ba94ba80a47": {
+      "nume_produs": "tableta",
+      "pret": 100.5,
+      "data_inregistrare": "2022-04-17T21:28:22.290261+03:00"
+    }
+  },
+  "comenzi": {
+    "400a5747b8a864783bcc1bf91d91b9f7": {
+      "detalii_comanda": {
+        "banane": 10,
+        "portocale": 20,
+        "kiwi": 15,
+        "struguri": 5
+      },
+      "data_inregistrare": "2022-04-17T21:46:13.212869+03:00"
+    },
+    "10e4a9903c54218ea63dae0ad7ee6b68": {
+      "detalii_comanda": {
+        "paine": 2,
+        "lapte": 1,
+        "oua": 15,
+        "cascaval": 3
+      },
+      "data_inregistrare": "2022-04-17T21:46:41.986947+03:00"
+    },
+    "faee51047952a01345fbbaf78803f490": {
+      "detalii_comanda": {
+        "mouse": 2,
+        "tastatura": 1,
+        "tableta": 5,
+        "mouse-pad": 3
+      },
+      "data_inregistrare": "2022-04-17T21:47:05.311594+03:00"
+    }
+  }
+}
